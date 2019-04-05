@@ -29,16 +29,7 @@
                     <div class="instagram"><i class="fab fa-instagram"></i></div>
                 </div>
             </div>
-            <div class="footer_block new">
-                <h3>Коллекции</h3>
-                <div class="list">
-                    <a href="#">Женщинам</a>
-                    <a href="#">Мужчинам</a>
-                    <a href="#">Детям</a>
-                    <a href="#">Новинки</a>
-                </div>
-            </div>
-        </div>
+            <div class="skjdaskj"></div>
 </div>
     <?php foreach($pageConfig['jsFiles'] as $path_js): ?>
         <script src='<?=$path_js?>'></script>
