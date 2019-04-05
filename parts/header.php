@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="header">
+        <div class="header MAIN HEADER">
             <div class="header_start">
                 <div class="logo"></div>
                 <div class="main_menu">
