@@ -2,9 +2,9 @@
             <div class="footer_block">
                 <h3>Коллекции</h3>
                 <div class="list">
-                    <a href="#">Женщинам</a>
-                    <a href="#">Мужчинам</a>
-                    <a href="#">Детям</a>
+                    <a href="/catalog.php?section=girl">Женщинам</a>
+                    <a href="/catalog.php?section=man">Мужчинам</a>
+                    <a href="/catalog.php?section=child">Детям</a>
                     <a href="#">Новинки</a>
                 </div>
             </div>
@@ -29,6 +29,7 @@
                     <div class="instagram"><i class="fab fa-instagram"></i></div>
                 </div>
             </div>
+        </div>
 </div>
     <?php foreach($pageConfig['jsFiles'] as $path_js): ?>
         <script src='<?=$path_js?>'></script>

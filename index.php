@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="connection">
-            <h2>Write us</h2>
+            <h2>Будь всегда в курсе выгодных предложений</h2>
             <h3>подписывайся и следи за новинками и выгодными предложениями.</h3>
             <form method="POST" action="">
                 <input type="email" name="email" placeholder="e-mail">
