@@ -31,7 +31,7 @@
     $count_rows = mysqli_fetch_assoc($result_count_rows_arr)['len'];
     
 
-    $count_products_on_page = 8;
+    $count_products_on_page = 5;
     $count_page = ceil($count_rows / $count_products_on_page); 
 
 

@@ -2,7 +2,7 @@
 
 class Product{
     constructor(name, price, img_src, id){ //создаёт объект на основе класса
-        this.name = name; //1name - свойство, 2name - название
+        this.name = name; //1nmae - свойство, 2name - название
         this.price = price;
         this.img_src = img_src;
         this.id = id;
@@ -13,9 +13,9 @@ class Product{
     render(parentEl){
         let productItem = document.createElement('a');
         productItem.href = `/product.php?id=${this.id}`;
-        productItem.classList.add('catalog-products-item');
+        productItem.classList.add('catalog_products_item');
         productItem.innerHTML = `
-            <div class="img" style="background-image: url('${this.img_src}')"></div>
+            <img src='${this.img_src}'>
             <h2>${this.name}</h2>
             <p>${this.price} руб.</p>
         `;
@@ -45,18 +45,18 @@ class Catalog {
                 [10000, 20000]
             ],
             activePrice: null,
-            category: [],
-            activeCategory: null
+            category: []
         };
         this.renderFilterPrice();
     }
-    // addProducts(productsArray){
-    //     productsArray.forEach((product) => {
-    //         this.products.push(product);
-    //     });
-    // }
+    addProducts(productsArray){
+        productsArray.forEach((product) => {
+            this.products.push(product);
+        });
+    }
     renderFilterPrice(){
-        let select = document.querySelector('.catalog-filters-price select');
+        let select = document.createElement('select');
+        select.name = 'filter_price';
         this.filters.price.forEach((priceArr) =>{
             let option = document.createElement('option');
             option.innerHTML = `${priceArr[0]}-${priceArr[1]} руб.`;
@@ -69,10 +69,12 @@ class Catalog {
            that.filters.activePrice = this.value;
            that.load();
        })
+
+        this.el.querySelector('.catalog_filters').appendChild(select);
     }
     renderCategory(){
-        let selectt = document.querySelector('.catalog-filters-category select');
-        selectt.innerHTML = '';
+        let selectt = document.createElement('select');
+        selectt.name = 'catalog_category';
         this.filters.category.forEach((categoryArr) => {
             let option = document.createElement('option');
             option.innerHTML = `${categoryArr.name}`;
@@ -83,14 +85,16 @@ class Catalog {
         let that = this;
 
        selectt.addEventListener('change', function(){
-           that.filters.activeCategory = this.value;
+           that.filters.category = this.value;
            that.load();
        })
+
+       this.el.querySelector('.catalog_filters').appendChild(selectt);
     }
 
     render(){
-        let catalogProductsBox = this.el.querySelector('.catalog-products');
-        catalogProductsBox.innerHTML = '';
+        let catalogProductsBox = this.el.querySelector('.catalog_products');
+        catalogProductsBox.innerHTML = [];
 
         this.products.forEach((product) => {
             product.render(catalogProductsBox);
@@ -103,12 +107,12 @@ class Catalog {
         this.el.classList.remove('preload');
     }
     paginationRender(paginationConfig){
-        let paginationEl = this.el.querySelector('.catalog-pagination');
+        let paginationEl = this.el.querySelector('.catalog_pagination');
         paginationEl.innerHTML = '';
 
         for (let i=1; i<=paginationConfig.countPage; i++){
             let paginationItem = document.createElement('div');
-            paginationItem.classList.add('catalog-pagination-item');
+            paginationItem.classList.add('catalog_pagination_item');
 
             if (i == paginationConfig.nowPage){
                 paginationItem.classList.add('active');
@@ -117,6 +121,7 @@ class Catalog {
             paginationItem.innerHTML = i;
             paginationItem.setAttribute('data_page_id', i);
 
+            paginationItem.setAttribute('data-page-id', i);
             let that = this;
             paginationItem.addEventListener('click', function(){
                 let pageNum = this.getAttribute('data_page_id');
@@ -130,12 +135,12 @@ class Catalog {
         this.preloadOn();
         let xhr = new XMLHttpRequest();
         let path = `/handlers/catalog_handler.php?page=${page}&section=${this.section}`;
-        // console.log(this.filters.activePrice);
+        console.log(this.filters.activePrice);
         if (this.filters.activePrice != null){
-            path += `&filters_price=${this.filters.activePrice}`;
+            path += `&filter_price=${this.filters.activePrice}`;
         }
-        if (this.filters.activeCategory != null){
-            path += `&filter_category=${this.filters.activeCategory}`;
+        if (this.filters.category != null){
+            path += `&category=${this.filters.category}`;
         }
         
         xhr.open('GET', path);
@@ -147,8 +152,9 @@ class Catalog {
             data.products.forEach((productItem)=>{
               this.products.push( new Product (productItem.name, productItem.price, productItem.img_src, productItem.id) );  
             });
+
             this.filters.category = data.category;
-            console.log(this.products);
+
             this.renderCategory();
             this.render();
             this.preloadOff();
@@ -178,6 +184,6 @@ catalog.load();
 // // boots.show();
 // // tshirts.show();
 
-// let catalogProductsBox = document.querySelector('.catalog-products');
+// let catalogProductsBox = document.querySelector('.catalog_products');
 // boots.render(catalogProductsBox);
 // tshirts.render(catalogProductsBox);

@@ -27,6 +27,4 @@ let basket = {
     //     });
     // }
 }
-
-// basket.load();
-// basket.remove();
+basket.load();

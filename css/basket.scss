@@ -1,62 +1,4 @@
 <<<<<<< HEAD
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid grey;
-    padding: 10px;
-
-    &-left{
-        a{
-            color: black;
-        }
-    }
-    &-right{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .hallo, .basket{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    }
-}
-.basket{
-    color: grey;
-
-    h2, p{
-        text-align: center;
-    }
-    h2{
-        margin-top: 40px;
-        color: black;
-    }
-    p{
-        font-style: italic;
-        margin-bottom: 40px;
-    }
-    &-heading{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid grey;
-
-        &-left, &-right{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        div{
-            margin: 5px 15px;
-        }
-    }
-}
-=======
-<<<<<<< HEAD
->>>>>>> origin/victoria-version
 .head{
     text-align: center;
 
@@ -184,8 +126,6 @@
         color: orange;
     }
 }
-<<<<<<< HEAD
-=======
 =======
 .basket-box {
     display: table;
@@ -286,4 +226,3 @@
 }
 
 >>>>>>> origin/julia-version
->>>>>>> origin/victoria-version
