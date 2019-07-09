@@ -1,19 +1,50 @@
+.catalog_filters{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+
+    select{
+        margin: 0 20px;
+    }
+}
+
 .catalog{
     transition: 1s all;
 
     &_products{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 60px 0 40px 0;
+        box-sizing: border-box;
 
         &_item{
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            text-align: center;
             width: 20%;
+            margin: 0 20px;
 
             img{
                 width: 100%;
                 height: 200px;
-                
+                margin-bottom: 20px;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            h2{
+                margin-bottom: 20px;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            p{
+                margin-bottom: 20px;
+                width: 100%;
             }
         }
     }
@@ -27,39 +58,25 @@
     &_pagination{
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-bottom: 60px;
 
         &_item{
-            width: 30px;
-            height: 30px;
-            background-color: pink;
-            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #000000;
+            color: #000000;
+            margin: 0 10px;   
 
             h2{
                 width: 100%;
             }
 //верстка каталога, адаптивка 
             &.active{
-                background-color: rgb(253, 109, 133);
+                background-color: rgba(0, 0, 0, 0.5);
             }
-        }
-    }
-
-    &-pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &-item {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #000000;
-            color: #000000;
-            text-align: center;
-            margin: 0 10px;   
-        }
-        &-item.active {
-            background-color: aqua;
         }
     }
 }

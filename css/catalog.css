@@ -1,3 +1,18 @@
+.catalog_filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.catalog_filters select {
+  margin: 0 20px;
+}
+
 .catalog {
   -webkit-transition: 1s all;
   transition: 1s all;
@@ -7,23 +22,47 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 60px 0 40px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .catalog_products_item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  text-align: center;
   width: 20%;
+  margin: 0 20px;
 }
 
 .catalog_products_item img {
   width: 100%;
   height: 200px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.catalog_products_item h2 {
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.catalog_products_item p {
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .catalog.preload {
@@ -37,25 +76,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .catalog_pagination_item {
-  width: 30px;
-  height: 30px;
-  background-color: pink;
-  margin-right: 10px;
-}
-
-.catalog_pagination_item h2 {
-  width: 100%;
-}
-
-.catalog_pagination_item.active {
-  background-color: #fd6d85;
-}
-
-.catalog-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,18 +89,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.catalog-pagination-item {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #000000;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #000000;
   color: #000000;
-  text-align: center;
   margin: 0 10px;
 }
 
-.catalog-pagination-item.active {
-  background-color: aqua;
+.catalog_pagination_item h2 {
+  width: 100%;
+}
+
+.catalog_pagination_item.active {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=catalog.css.map */
